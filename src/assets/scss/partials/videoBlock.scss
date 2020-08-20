@@ -1,0 +1,21 @@
+.videoBlock {
+  .video__wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+    }
+  }
+  .videoBlock__title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+}

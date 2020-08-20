@@ -115,3 +115,6 @@ dist
 .pnp.*
 
 package-lock.json
+uploads
+static
+build
