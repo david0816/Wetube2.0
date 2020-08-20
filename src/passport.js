@@ -17,7 +17,9 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `https://agile-headland-94108.herokuapp.com/${routes.githubCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://agile-headland-94108.herokuapp.com${routes.githubCallback}`
+        : `http://localhost:4000${routes.githubCallback}`,
     },
     githubLoginCallback
   )
@@ -28,7 +30,9 @@ passport.use(
     {
       clientID: process.env.GG_ID,
       clientSecret: process.env.GG_SECRET,
-      callbackURL: `http://localhost:4000${routes.googleCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://agile-headland-94108.herokuapp.com${routes.googleCallback}`
+        : `http://localhost:4000${routes.googleCallback}`,
     },
     googleLoginCallback
   )
@@ -39,7 +43,9 @@ passport.use(
     {
       clientID: process.env.KK_ID,
       clientSecret: process.env.KK_SECRET,
-      callbackURL: `http://localhost:4000${routes.kakaoCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://agile-headland-94108.herokuapp.com${routes.kakaoCallback}`
+        : `http://localhost:4000${routes.kakaoCallback}`,
     },
     kakaoLoginCallback
   )
