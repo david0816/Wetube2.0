@@ -74,7 +74,6 @@ function getCurrentTime() {
 
 async function setTotalTime() {
   const duration = await getBlobDuration(videoPlayer.src);
-  console.log(duration);
   const totalTimeString = formatDate(duration);
   totalTime.innerHTML = totalTimeString;
   setInterval(getCurrentTime, 1000);
@@ -107,7 +106,6 @@ function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVoumeClick);
   fullScreenBtn.addEventListener("click", goFullScreen);
-  // videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
   volumeRange.addEventListener("input", handleDrag);
 }
